@@ -29,7 +29,7 @@ const App = ({isSignedIn, downloadScores}) => {
 
   return (
     <BrowserRouter>
-      <Container>
+      <Container fluid>
         <Switch>
           <Route exact path="/signin">
             {

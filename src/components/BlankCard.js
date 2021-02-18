@@ -8,7 +8,7 @@ export default () => {
   }
 
   return (
-    <div className={styles.blankCard + " flex-grow-1"}>
+    <div className={styles.blankCard + " flex-1"}>
       <img className={styles.cardImage} src={cardImages(`./${imageFileName()}`)} alt={imageFileName()} />
     </div>
   )

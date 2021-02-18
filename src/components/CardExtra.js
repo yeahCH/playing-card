@@ -72,7 +72,7 @@ const CardHolder = ({id, holdersState, firstId, secondId,
   
   return(
     <Fade in={fadeCardIn} timeout={3000} onExited={() => setFadeCardIn(true)}>
-      <Col className={styles.cardHolder + "d-flex mb-1 mx-lg-2 flex-1"}>
+      <div className={styles.cardHolder + "d-flex mb-1 mx-lg-2 flex-1"}>
         {((holdersState[id].enable === true) && (cardsCount > 0)) && (
           <Card card={topCard} active={active} id={id} pickup={compareCards}/>
         )}
@@ -82,7 +82,7 @@ const CardHolder = ({id, holdersState, firstId, secondId,
         {(cardsCount === 0) && (
           <BlankCard />
         )}
-      </Col>
+      </div>
     </Fade>
   )
 }

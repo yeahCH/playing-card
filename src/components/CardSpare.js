@@ -30,10 +30,10 @@ const CardSpare = ({ spareCards, transferFreeCard }) => {
   }, [spareCards])
 
   return (
-    <Col className="d-flex mb-1 mx-lg-4 flex-1" onClick={() => transferFreeCard()}>
+    <div className="d-flex mb-1 mx-lg-2 flex-1 mr-3 mr-md-0" onClick={() => transferFreeCard()}>
       { (spareCards.length > 0) && (<FreeCard highlight={highlight && toggleHighlight} />) }
       { (spareCards.length === 0) && (<BlankCard />) }
-    </Col>
+    </div>
   )
 }
 
