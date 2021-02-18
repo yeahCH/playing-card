@@ -70,24 +70,24 @@ export function isGameOver(cardArray, spareCardsList) {
       
       if(cardArray[i].cardsData[cardArray[i].cardsData.length-1].number === 
         cardArray[j].cardsData[cardArray[j].cardsData.length-1].number) {
-          console.log("[same card]",i, cardArray[i].cardsData[cardArray[i].cardsData.length-1] ,
-            j, cardArray[j].cardsData[cardArray[j].cardsData.length-1])
+          // console.log("[same card]",i, cardArray[i].cardsData[cardArray[i].cardsData.length-1] ,
+          //  j, cardArray[j].cardsData[cardArray[j].cardsData.length-1])
         return false;
       }
     }
     // find same card from the free cards store
     for(j=0; j<cardArray[cardArray.length-1].cardsData.length-1; j++) {
       if(cardArray[i].cardsData[cardArray[i].cardsData.length-1].number === cardArray[cardArray.length-1].cardsData[j].number) {
-          console.log("[same card on spare]",i, cardArray[i].cardsData[cardArray[i].cardsData.length-1] ,
-            j, cardArray[cardArray.length-1].cardsData[j])
+          // console.log("[same card on spare]",i, cardArray[i].cardsData[cardArray[i].cardsData.length-1] ,
+          //  j, cardArray[cardArray.length-1].cardsData[j])
         return false;
       }
     }
 
     for(j=0; j<spareCardsList.length; j++) {
       if(cardArray[i].cardsData[cardArray[i].cardsData.length-1].number === spareCardsList[j].number) {
-          console.log("[same card on spare]",i, cardArray[i].cardsData[cardArray[i].cardsData.length-1] ,
-            j, spareCardsList[j])
+          // console.log("[same card on spare]",i, cardArray[i].cardsData[cardArray[i].cardsData.length-1] ,
+          //  j, spareCardsList[j])
         return false;
       }
     }

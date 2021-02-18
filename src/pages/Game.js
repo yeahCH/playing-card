@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { Row, Col, Button, Modal, DropdownButton, Dropdown, Spinner } from 'react-bootstrap'
+import { Row, Col, Button, DropdownButton, Dropdown, Spinner } from 'react-bootstrap'
 import CardHolder from "../components/CardHolder"
 import CardSpare from "../components/CardSpare"
+import Help from "../components/Help"
+import Score from "../components/Score"
 
 import { signOut } from '../actions/loginAction'
 import { resetCardsStatus, appendScoreHistory, clearScoreHistory } from "../actions/logicActions"
@@ -38,13 +40,13 @@ const Game60K = ({holdersState, score, gameOver, scoreHistory, resetAllCardsStat
 
   useEffect(() => {
     resetAllCardsStatus(initCardArray());
-    console.log("[App] loading scores.");
+    // // console.log("[App] loading scores.");
   }, [])
 
   useEffect(() => {
     if(gameOver === true) {
       // append game history
-      console.log("[App] saving score.")
+      // // console.log("[App] saving score.")
       var scoreNewItem = {
         date: new Date(),
         score: score
@@ -59,7 +61,7 @@ const Game60K = ({holdersState, score, gameOver, scoreHistory, resetAllCardsStat
 
   const onClickResetHistory = () => {
     if(window.confirm("Are you sure to clear local history?") === true) {
-      console.log("[App] clear history.");
+      // // console.log("[App] clear history.");
       clearLocalScores();
     }
   }
@@ -84,31 +86,8 @@ const Game60K = ({holdersState, score, gameOver, scoreHistory, resetAllCardsStat
 
   return (
     <div>
-      <Modal show={showGameOverModal} onHide={onCloseModal}>
-        <Modal.Header closeButton><Modal.Title>60K Points</Modal.Title></Modal.Header>
-        <Modal.Body>
-            <h4 className="text-center">Game Over!</h4>
-            <h2 className="text-center text-danger">{score}</h2>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="primary" onClick={onCloseModal}>Close</Button>
-        </Modal.Footer>
-      </Modal>
-
-      <Modal show={showHelpModal} onHide={onCloseHelpModal} size="lg">
-        <Modal.Header closeButton><Modal.Title>How to play?</Modal.Title></Modal.Header>
-        <Modal.Body>
-          <p className="lead text-muted">
-            This is a card game by React.<br/>
-            Please select a pair of cards with same number. Then it will disappear.<br/>
-            It will be over if you can not find a pair of cards any more.<br/>
-            <strong className="text-info">Please Sign-in to share your scores with community!</strong>
-          </p>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="primary" onClick={onCloseHelpModal}>Close</Button>
-        </Modal.Footer>
-      </Modal>
+      <Score score show={showGameOverModal} onClose={onCloseModal} />
+      <Help show={showHelpModal} onClose={onCloseHelpModal} />
 
       <Row>
         <Col sm="12" md="10" lg="10" className="bg-info mt-2 rounded">

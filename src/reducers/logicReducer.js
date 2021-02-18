@@ -26,7 +26,7 @@ export default function logicReducer(state = initialState, action) {
        *  reset all game status
        */
     case actions.RESET_CARDS_STATUS:
-      console.log("[Action] Reset game status.");
+      // console.log("[Action] Reset game status.");
       var holderStatesTemp = [];
       var holderStateTemp;
       for(let i=0; i<15; i++) {
@@ -55,7 +55,7 @@ export default function logicReducer(state = initialState, action) {
      * reset card pickup status
      */
     case actions.RESET_PICKUP_CARD:
-      console.log("[Action] reset pickup state.");
+      // console.log("[Action] reset pickup state.");
       return {
         ...state,
         firstSelectedId: -1,
@@ -66,7 +66,7 @@ export default function logicReducer(state = initialState, action) {
      * pickup first card
      */
     case actions.PICKUP_FIRST_CARD:
-      console.log("[Action] pickup first.");
+      // console.log("[Action] pickup first.");
 
       return {
         ...state,
@@ -81,7 +81,7 @@ export default function logicReducer(state = initialState, action) {
         // ignore same card selection
         return state;
       }
-      console.log("[Action] pickup second.");
+      // console.log("[Action] pickup second.");
       return {
         ...state,
         secondSelectedId: action.payload
@@ -94,7 +94,7 @@ export default function logicReducer(state = initialState, action) {
       cardsDataTemp = []
       Object.assign(cardsDataTemp, state.holdersState[action.payload].cardsData);
       removedCard = cardsDataTemp.pop();
-      console.log("[Action] removed first.", removedCard);
+      // console.log("[Action] removed first.", removedCard);
       scoreTemp = state.score;
       // update score
       if(cardsDataTemp.length === 0) {
@@ -120,7 +120,7 @@ export default function logicReducer(state = initialState, action) {
       cardsDataTemp = [];
       Object.assign(cardsDataTemp, state.holdersState[action.payload].cardsData);
       removedCard = cardsDataTemp.pop();
-      console.log("[Action] removed second.", removedCard);
+      // console.log("[Action] removed second.", removedCard);
       scoreTemp = state.score;
       // update score
       if(cardsDataTemp.length === 0) {
@@ -147,8 +147,8 @@ export default function logicReducer(state = initialState, action) {
         if((state.holdersState[i].cardsData.length === 0) && 
         (state.holdersState[i+5].cardsData.length === 0)) {
           if(state.holdersState[i+10].enable === false) {
-            console.log("[Action] open center card.", 
-              state.holdersState[i+10].cardsData[state.holdersState[i+10].cardsData.length-1]);
+            // console.log("[Action] open center card.", 
+            // state.holdersState[i+10].cardsData[state.holdersState[i+10].cardsData.length-1])
             return {
               ...state,
               holdersState: [...state.holdersState.slice(0, i+10),
@@ -165,8 +165,8 @@ export default function logicReducer(state = initialState, action) {
      */
     case actions.SEND_SPARE_CARD_TO_LAST_HOLDER:
       if(state.spareCardsState.length === 0) {
-        console.log("[Action] Spare Cards:", state.spareCardsState);
-        console.log("[Action] Last Holder:", state.holdersState[15].cardsData);
+        // console.log("[Action] Spare Cards:", state.spareCardsState);
+        // console.log("[Action] Last Holder:", state.holdersState[15].cardsData);
 
         return {
           ...state,
@@ -191,7 +191,7 @@ export default function logicReducer(state = initialState, action) {
      */
     case actions.CHECK_GAME_OVER:
       if(isGameOver(state.holdersState, state.spareCardsState)) {
-        console.log("[Action] GAME OVER!");
+        // console.log("[Action] GAME OVER!");
         return {
           ...state,
           gameOver: true

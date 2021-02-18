@@ -19,7 +19,7 @@ export const uploadScoreFailed = () => ({
 
 export function uploadScore(point, tokens) {
   return async dispatch => {
-    console.log("[App] uploading ...")
+    // console.log("[App] uploading ...")
     dispatch(uploadScoreStart())
 
     try {
@@ -31,7 +31,7 @@ export function uploadScore(point, tokens) {
         headers: tokens
       })
 
-      console.log("resp: ", resp.data)
+      // console.log("resp: ", resp.data)
       dispatch(uploadScoreDone(resp.data.scores))
     } catch(err) {
       dispatch(uploadScoreFailed())
@@ -41,13 +41,13 @@ export function uploadScore(point, tokens) {
 
 export function downloadHighscore() {
   return async dispatch => {
-    console.log("[App] downloading ...")
+    // console.log("[App] downloading ...")
     dispatch(uploadScoreStart())
 
     try {
       const resp = await axios.get('https://api60k.herokuapp.com/scores')
 
-      console.log("resp: ", resp.data)
+      // console.log("resp: ", resp.data)
       dispatch(uploadScoreDone(resp.data.scores))
     } catch(err) {
       dispatch(uploadScoreFailed())

@@ -23,7 +23,7 @@ const App = ({isSignedIn, downloadScores}) => {
   
   useEffect(() => {
     // download history
-    console.log("[App] download scores ...")
+    // console.log("[App] download scores ...")
     downloadScores()
   }, [downloadScores])
 

@@ -34,7 +34,7 @@ const Signin = ({pending, hasErrors, errorMsgs, login}) => {
   }
   
   const onSubmit = (e) => {
-    console.log("[App] Trying to sign in...")
+    // console.log("[App] Trying to sign in...")
     login(email, password)
     e.preventDefault()
   }

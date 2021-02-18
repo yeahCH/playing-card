@@ -9,7 +9,7 @@ self.addEventListener("activate", event => {
       Promise.all(
         keyList.map(key => {
           if (!cacheWhitelist.includes(key)) {
-            console.log("Deleting cache: " + key);
+            // console.log("Deleting cache: " + key);
             return caches.delete(key);
           }
         })
@@ -29,7 +29,7 @@ self.addEventListener("install", function(event) {
           .then(assets => {
             const urlsToCache = ["/", assets["main.js"]];
             cache.addAll(urlsToCache);
-            console.log("cached");
+            // console.log("cached");
           });
       })
     );

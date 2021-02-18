@@ -50,7 +50,7 @@ const Signup = ({pending, hasErrors, errorMsgs, signup}) => {
   }
 
   const onSubmit = (e) => {
-    console.log("[App] Trying to sign up...")
+    // console.log("[App] Trying to sign up...")
     e.preventDefault()
 
     let errorsList = []
