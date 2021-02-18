@@ -113,21 +113,21 @@ const Game60K = ({holdersState, score, gameOver, scoreHistory, resetAllCardsStat
             (holdersState.length > 0) && (
               <div className="d-block d-md-flex">
                 <div>
-                  <Row>
+                  <Row className="px-3">
                     <CardHolder id={0} key={0}/>
                     <CardHolder id={1} key={1}/>
                     <CardHolder id={2} key={2}/>
                     <CardHolder id={3} key={3}/>
                     <CardHolder id={4} key={4}/>
                   </Row>
-                  <Row>
+                  <Row className="px-3 mt-1">
                     <CardHolder id={10} key={10}/>
                     <CardHolder id={11} key={11}/>
                     <CardHolder id={12} key={12}/>
                     <CardHolder id={13} key={13}/>
                     <CardHolder id={14} key={14}/>
                   </Row>
-                  <Row>
+                  <Row className="px-3 mt-1">
                     <CardHolder id={5} key={5}/>
                     <CardHolder id={6} key={6}/>
                     <CardHolder id={7} key={7}/>
@@ -135,7 +135,7 @@ const Game60K = ({holdersState, score, gameOver, scoreHistory, resetAllCardsStat
                     <CardHolder id={9} key={9}/>
                   </Row>
                 </div>
-                <div className="d-flex d-md-block ml-md-3 mt-2 mt-md-0">
+                <div className="d-flex d-md-block ml-2 ml-md-5 mt-2 mt-md-0" style={{maxWidth: '40vw'}}>
                   <CardSpare />
                   <CardExtra id={15} key={15} />
                 </div>
