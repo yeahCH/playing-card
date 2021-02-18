@@ -49,7 +49,7 @@ const App = ({isSignedIn, downloadScores}) => {
           <Row>
             <Col className="text-center" sm={6}>
               <h5>
-                <a href="https://github.com/yeahCH/playing-card"><img src={githubIcon} alt="github.com/yeahch/playing-card" style={{width: '36px', marginRight: '10px'}}/></a>
+                <a href="https://github.com/yeahCH/playing-card" target="_blank"><img src={githubIcon} alt="github.com/yeahch/playing-card" style={{width: '36px', marginRight: '10px'}}/></a>
                 @yeahch : 2020
               </h5>
             </Col>
